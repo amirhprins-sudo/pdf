@@ -1,887 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معًا.. السعودية والولايات المتحدة تصنعان استقرار الشرق الأوسط</title>
-    <style>
-        :root {
-            --usa-blue: #002868;
-            --usa-red: #BF0A30;
-            --saudi-green: #006400;
-            --royal-gold: #D4AF37;
-            --diplomatic-purple: #4B0082;
-            --crystal-white: #FFFFFF;
-            --deep-space: #1a2a57;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--deep-space) 0%, var(--usa-blue) 50%, var(--saudi-green) 100%);
-            color: #333;
-            line-height: 1.8;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .magical-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            perspective: 1000px;
-        }
-
-        /* التصميم السحري للهيدر */
-        .diplomatic-header {
-            background: linear-gradient(135deg, 
-                var(--usa-blue) 0%, 
-                var(--saudi-green) 50%, 
-                var(--royal-gold) 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
-        .diplomatic-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%),
-                linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.3) 50%, transparent 70%);
-            background-size: 80px 80px, 100% 100%;
-            animation: diplomaticFloat 15s linear infinite;
-            transform: translateZ(-100px);
-        }
-
-        @keyframes diplomaticFloat {
-            0% { transform: translate(0, 0) rotate(0deg) translateZ(-100px); }
-            100% { transform: translate(-100px, -100px) rotate(360deg) translateZ(-100px); }
-        }
-
-        .logo-transformer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 20px;
-            perspective: 1000px;
-        }
-
-        .logo-item {
-            font-size: 2.5em;
-            font-weight: 900;
-            background: rgba(255,255,255,0.95);
-            padding: 15px 30px;
-            border-radius: 12px;
-            color: var(--usa-blue);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transform-style: preserve-3d;
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .logo-item:hover {
-            transform: rotateY(15deg) translateZ(20px);
-            color: var(--saudi-green);
-        }
-
-        .logo-item:hover::before {
-            transform: translateX(100%);
-        }
-
-        .main-title {
-            font-size: 3em;
-            margin: 20px 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            color: var(--crystal-white);
-            font-weight: 700;
-            letter-spacing: -1px;
-            transform: translateZ(50px);
-            position: relative;
-            line-height: 1.3;
-        }
-
-        .title-underline {
-            width: 150px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--usa-red), var(--royal-gold));
-            margin: 15px auto;
-            border-radius: 2px;
-            animation: underlinePulse 2s ease-in-out infinite;
-        }
-
-        @keyframes underlinePulse {
-            0%, 100% { transform: scaleX(1); opacity: 1; }
-            50% { transform: scaleX(1.1); opacity: 0.8; }
-        }
-
-        .authors-display {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .author-card {
-            background: rgba(255,255,255,0.15);
-            padding: 15px 25px;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.4s ease;
-            transform-style: preserve-3d;
-        }
-
-        .author-card:hover {
-            transform: translateY(-8px) translateZ(20px);
-            background: rgba(255,255,255,0.25);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-        }
-
-        /* محتوى المقالة بتصميم سحري */
-        .magical-content {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 
-                0 20px 40px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.6);
-            margin-bottom: 40px;
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .magical-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(45deg, var(--usa-blue), var(--saudi-green));
-            border-radius: 0 20px 0 120px;
-            opacity: 0.1;
-            transform: translateZ(-50px);
-        }
-
-        .content-section {
-            margin-bottom: 35px;
-            padding: 30px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            border-right: 4px solid var(--saudi-green);
-            transform-style: preserve-3d;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        .section-title {
-            color: var(--usa-blue);
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 12px;
-            page-break-after: avoid;
-            break-after: avoid;
-            line-height: 1.4;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--usa-red), var(--royal-gold));
-            border-radius: 2px;
-        }
-        
-        .highlight-quote {
-            background: linear-gradient(135deg, var(--deep-space) 0%, var(--diplomatic-purple) 100%);
-            color: white;
-            padding: 35px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-            font-style: italic;
-            font-size: 1.2em;
-            position: relative;
-            transform-style: preserve-3d;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-            page-break-inside: avoid;
-            break-inside: avoid;
-            line-height: 1.6;
-        }
-
-        .highlight-quote::before, .highlight-quote::after {
-            content: '"';
-            font-size: 4em;
-            color: var(--royal-gold);
-            position: absolute;
-            opacity: 0.3;
-            font-family: serif;
-        }
-
-        .highlight-quote::before {
-            top: 8px;
-            right: 25px;
-            transform: translateZ(30px);
-        }
-
-        .highlight-quote::after {
-            bottom: 8px;
-            left: 25px;
-            transform: translateZ(30px) rotate(180deg);
-        }
-
-        .diplomatic-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-            perspective: 1000px;
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, var(--usa-blue) 0%, var(--saudi-green) 100%);
-            color: white;
-            padding: 30px 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 12px 25px rgba(0,100,0,0.3);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform-style: preserve-3d;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%);
-            background-size: 25px 25px;
-            animation: statFloat 10s linear infinite;
-            transform: translateZ(-20px);
-        }
-
-        @keyframes statFloat {
-            0% { transform: translate(0, 0) rotate(0deg) translateZ(-20px); }
-            100% { transform: translate(-50px, -50px) rotate(180deg) translateZ(-20px); }
-        }
-
-        .stat-card:hover {
-            transform: translateY(-12px) rotateX(10deg) translateZ(20px);
-            box-shadow: 0 20px 40px rgba(0,100,0,0.4);
-        }
-
-        .stat-number {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 12px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-text {
-            font-size: 1.1em;
-            opacity: 0.95;
-            position: relative;
-            z-index: 2;
-            line-height: 1.5;
-        }
-
-        .magical-footer {
-            background: linear-gradient(135deg, var(--deep-space) 0%, var(--usa-blue) 100%);
-            color: white;
-            text-align: center;
-            padding: 40px 25px;
-            border-radius: 15px;
-            margin-top: 50px;
-            position: relative;
-            overflow: hidden;
-            page-break-before: always;
-            break-before: page;
-        }
-
-        .magical-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 40%, rgba(212,175,55,0.1) 50%, transparent 60%),
-                radial-gradient(circle at 30% 70%, rgba(191,10,48,0.1) 0%, transparent 50%);
-            animation: footerShine 8s ease-in-out infinite;
-        }
-
-        @keyframes footerShine {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.7; }
-        }
-
-        .social-diplomacy {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .social-link {
-            background: rgba(255,255,255,0.15);
-            padding: 12px 25px;
-            border-radius: 20px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: right 0.6s ease;
-        }
-
-        .social-link:hover::before {
-            right: 100%;
-        }
-
-        .social-link:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-
-        /* زر تحميل PDF */
-        .pdf-download-btn {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: linear-gradient(135deg, var(--usa-red) 0%, var(--royal-gold) 100%);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 45px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: all 0.4s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .pdf-download-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-            background: linear-gradient(135deg, var(--royal-gold) 0%, var(--usa-red) 100%);
-        }
-
-        .pdf-download-btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .pdf-download-btn::before {
-            content: '📄';
-            font-size: 1.3em;
-        }
-
-        /* نافذة التحميل */
-        .pdf-loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            flex-direction: column;
-            color: white;
-            font-size: 1.3em;
-        }
-
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid var(--royal-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* أنماط خاصة بالطباعة */
-        @media print {
-            body {
-                background: white !important;
-                color: black !important;
-                font-size: 14px !important;
-            }
-            
-            .magical-container {
-                max-width: 100% !important;
-                padding: 5mm !important;
-                margin: 0 !important;
-                box-shadow: none !important;
-            }
-            
-            .diplomatic-header,
-            .magical-content,
-            .magical-footer {
-                box-shadow: none !important;
-                margin: 0 0 15px 0 !important;
-                border-radius: 0 !important;
-                page-break-inside: avoid !important;
-                padding: 20px !important;
-            }
-            
-            .content-section {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-                margin-bottom: 15px !important;
-                padding: 20px !important;
-            }
-            
-            .pdf-download-btn {
-                display: none !important;
-            }
-            
-            .scroll-reveal {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-            
-            /* تقليل الهوامش في الطباعة */
-            @page {
-                margin: 10mm 8mm 10mm 8mm;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-title { font-size: 2em; }
-            .logo-transformer { flex-direction: column; gap: 30px; }
-            .logo-item { font-size: 1.8em; padding: 12px 20px; }
-            .magical-content { padding: 25px 15px; }
-            .diplomatic-stats { grid-template-columns: 1fr; }
-            .content-section { padding: 20px; }
-            .authors-display { gap: 15px; }
-            .pdf-download-btn {
-                bottom: 15px;
-                left: 15px;
-                padding: 12px 20px;
-                font-size: 1em;
-            }
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px) translateZ(-50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0) translateZ(0);
-        }
-        
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-        
-        .washington-times-logo {
-            width: 250px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transition: all 0.5s ease;
-        }
-        
-        .washington-times-logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
-        }
-        
-        .flag-image {
-            width: 250px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transition: all 0.5s ease;
-        }
-        
-        .flag-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
-        }
-        
-        /* تحسينات للكثافة */
-        .compact-section {
-            margin-bottom: 25px !important;
-        }
-        
-        .compact-padding {
-            padding: 20px !important;
-        }
-    </style>
-</head>
-<body>
-    <!-- زر تحميل PDF -->
-    <button class="pdf-download-btn" onclick="downloadPDF()">
-        حفظ كـ PDF
-    </button>
-
-    <!-- نافذة التحميل -->
-    <div class="pdf-loading" id="pdfLoading">
-        <div class="loading-spinner"></div>
-        <div>جاري إنشاء PDF...</div>
-        <div style="font-size: 0.8em; margin-top: 10px;">يرجى الانتظار</div>
-    </div>
-
-    <div class="magical-container">
-        <header class="diplomatic-header">
-            <div class="logo-transformer">
-                <!-- شعار واشنطن تايمز -->
-                <img src="logo.png" alt="Washington Times Logo" class="washington-times-logo">
-
-                <!-- أعلام الدول -->
-                <img src="flag.jpg" alt="علم الولايات المتحدة" class="flag-image">
-                
-            </div>
-
-            <h1 class="main-title scroll-reveal">معًا.. السعودية والولايات المتحدة تصنعان استقرار الشرق الأوسط</h1>
-            <div class="title-underline"></div>
-            <p class="subtitle scroll-reveal" style="font-size: 1.3em; margin-top: 15px;">شراكة استراتيجية تُعيد تشكيل مستقبل المنطقة والعالم</p>
-
-            <div class="authors-display">
-                <div class="author-card scroll-reveal">
-                    <strong>محمد الحامد</strong>
-                    <div>محلل جيوسياسي سعودي</div>
-                </div>
-                <div class="author-card scroll-reveal">
-                    <strong>جيسون إبستين</strong>
-                    <div>رئيس Southfive Strategies LLC</div>
-                </div>
-            </div>
-        </header>
-
-        <main class="magical-content">
-            <!-- القسم الأول: مقدمة الزيارة -->
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">الزيارة التاريخية</h2>
-                <p>تَعِدُ زيارةُ ولي العهد السعودي الأمير محمد بن سلمان إلى واشنطن اليوم الثلاثاء بأن تكون أكثر من مجرد محطة دبلوماسية عادية. فصيغة "زيارة دولة" — وهي الأعلى في البروتوكول الدبلوماسي الأميركي، والأولى من نوعها خلال الولاية الثانية للرئيس دونالد ترامب — من المرجح أن تُعيد التأكيد وتعزز الشراكة السعودية–الأميركية بوصفها حجر الزاوية للاستقرار في الشرق الأوسط الذي كان تقليديًا مضطربًا ومتقلبًا، وما يمتد إلى ما بعده من مناطق أخرى حول العالم.</p>
-            </section>
-
-            <!-- اقتباس بارز -->
-            <div class="highlight-quote scroll-reveal compact-section">
-                "على مدى عقود، لعبت المملكة العربية السعودية دورًا محوريًا في دعم المكانة العالمية للولايات المتحدة، إذ كانت ضامنًا لأمن الخليج العربي (الخليج الفارسي)، وقائدةً روحية للعالم الإسلامي، وركيزةً أساسية في نظام "البترودولار" الذي أسهم في ترسيخ الهيمنة المالية الأميركية."
-            </div>
-
-            <p>ومع ذلك، ظلّ كثيرون في واشنطن مترددين في الاعتراف بأهمية الرياض. وخلال معظم فترة إدارة بايدن، جرى التعامل مع العلاقات الثنائية باعتبارها أمرًا مفروغًا منه، ولم يُعد تعزيزها إلا عند الحاجة إلى زيادة إنتاج الهيدروكربونات في المنطقة.</p>
-
-            <p>وعلى النقيض من ذلك، أدركت إدارتا ترامب منذ البداية أن الأمن حول شبه الجزيرة العربية لا يقل أهمية عن الأمن في أوروبا، لأن الدفاع عن قلب الطاقة العالمي وشرايين التجارة في الخليج يؤثر مباشرةً على الاقتصاد الأميركي، وعلى قوة عملته، وعلى قيادته العالمية في نهاية المطاف.</p>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">الدور الإقليمي للمملكة</h2>
-                <p>ويمتد الدور الإقليمي للمملكة إلى الجهود الدبلوماسية أيضًا. ففي الوطن العربي، كانت السعودية في قلب المساعي الرامية إلى استقرار لبنان ومواجهة التطرف، بينما دفعت في سوريا نحو حلول توازن بين الاحتياجات الإنسانية ومتطلبات الأمن الإقليمي. وقد جاء رفع الرئيس ترامب للعقوبات عن سوريا في وقت سابق من هذا العام بعد مشاورات مطوّلة مع ولي العهد — في إشارة واضحة إلى أن واشنطن تعترف بقيادة الرياض في صياغة النتائج في العواصم العربية.</p>
-            </section>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">وساطة المملكة في النزاعات</h2>
-                <p>كما كانت المملكة وسيطًا لا غنى عنه في مساعدة إدارة ترامب على التوصل إلى وقف لإطلاق النار في قطاع غزة، وقد تعهّدت بدعم جهود إعادة إعمار القطاع وتأهيله سياسيًا. وبالمثل، قد يعيد اجتماع الثلاثاء زرع بذور الاندماج الإقليمي التي تراجعت بعد هجمات حماس في 7 أكتوبر 2023، بما قد يفتح المجال أمام اتفاق مستقبلي لتطبيع العلاقات بين المملكة وإسرائيل. وعلى الرغم من تأكيد المسؤولين السعوديين مرارًا أن شرط المملكة الأساسي هو قيام دولة فلسطينية مستقلة، فإن الرئيس ترامب قال مؤخرًا في برنامج "60 دقيقة" إنه لا يرى هذا الشرط "ضرورة مسبقة".</p>
-            </section>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">المملكة كقوة توازن</h2>
-                <p>وتُعد المملكة قوة توازن داخل الخليج. فقد أظهرت قدرتها على التعافي بعد هجمات أرامكو عام 2019 التي شنّها الحوثيون في اليمن، كما ظهر تأثيرها الهادئ بعد الضربة الإسرائيلية ضد عناصر حماس في قطر في يونيو — في دلالة على أن أمن شبه الجزيرة لا يمكن فصله عن المصالح الاستراتيجية الأميركية.</p>
-                <p>كما تعزّز هذه التطورات صورة المملكة بوصفها قائدًا موثوقًا للعالمين العربي والإسلامي السائرين نحو التحديث والاستقرار، والرافض بلا تردد للتطرف العنيف والدعاية الرجعية.</p>
-            </section>
-
-            <!-- اقتباس بارز -->
-            <div class="highlight-quote scroll-reveal compact-section">
-                "حين قام الرئيس ترامب بأول زيارة خارجية له إلى الرياض عام 2017، شكّلت تلك الزيارة بداية عهد جديد في العلاقات السعودية–الأميركية، تُوّجت بمشاركته مع الملك سلمان والرئيس المصري عبدالفتاح السيسي في افتتاح إعتدال "المركز العالمي لمكافحة الفكر المتطرف"."
-            </div>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">الاستثمارات والاتفاقيات</h2>
-                <p>أما عودته إلى المملكة في مايو الماضي، فقد كانت زيارة مليئة بالمضمون: التزامات سعودية بشراء منتجات أميركية بقيمة 600 مليار دولار تشمل التكنولوجيا والطاقة والرعاية الصحية، بالإضافة إلى صفقة دفاعية ضخمة بقيمة 142 مليار دولار — وهي الأكبر في التاريخ.</p>
-                <p>وكما قال الرئيس ترامب خلال زيارته هذا العام: "إن الرخام اللامع في الرياض لم يُبنَ على أيدي منظّري بناء الأمم أو المحافظين الجدد أو المنظمات الليبرالية غير الربحية. إن ولادة شرق أوسط حديث جاءت على أيدي شعوب المنطقة أنفسهم." كانت هذه الرسالة دلالة على فهم عميق بأن الإصلاح الحقيقي في الشرق الأوسط يُقاد من الداخل، لا يُملى من الخارج.</p>
-            </section>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">نتائج الزيارة المتوقعة</h2>
-                <p>ستتجاوز إقامة ولي العهد في واشنطن حدود المراسم الدبلوماسية، لتترجم الوعود إلى نتائج ملموسة. فمن المتوقع أن تنتقل الاتفاقيات الدفاعية من الورق إلى التنفيذ، بما يضمن التشغيل التكاملي الكامل بين المنظومتين السعودية والأميركية لحماية الخليج وتأمين تدفقات الطاقة العالمية.</p>
-                <p>وبالقدر نفسه من الأهمية، قد تُرسّخ الزيارة موقع المملكة كـ"ممر حوسبة" للتقنيات الأميركية الموثوقة — في مجالات الرقائق والذكاء الاصطناعي والخدمات السحابية — وهي القطاعات التي تشكل بنية الاقتصادين السعودي والأميركي. وليس من المستغرب أن الشركات الأميركية الكبرى لم تعد تكتفي بالتصدير إلى المملكة، بل بدأت بتأسيس مقراتها الإقليمية داخلها، مما يعزز القدرة التنافسية الأميركية خارج حدودها. وخلال سنوات إدارة بايدن، سعت المملكة أيضًا إلى إبرام اتفاق نووي مدني مع الولايات المتحدة، ومن المتوقع إحراز تقدم في هذا الملف.</p>
-            </section>
-
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">التعاون البحري والأمني</h2>
-                <p>وقد يشهد التعاون البحري في الخليج والبحر الأحمر توسعًا إضافيًا لتعزيز القدرة على رصد أي تهديدات — سواء من دول أو جماعات قرصنة — والتعامل معها بسرعة. فهذه الممرات الحيوية مهمة للأمن القومي الأميركي بقدر ما هي ضرورية لإستقرار المملكة.</p>
-            </section>
-
-            <!-- بطاقات إحصائية -->
-            <div class="diplomatic-stats scroll-reveal compact-section">
-                <div class="stat-card">
-                    <div class="stat-number">75%</div>
-                    <div class="stat-text">زيادة التعاون الاقتصادي بين البلدين خلال السنوات الخمس الماضية</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">60+</div>
-                    <div class="stat-text">اتفاقيات أمنية وعسكرية مشتركة تم توقيعها بين المملكة والولايات المتحدة</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">120</div>
-                    <div class="stat-text">قضايا إقليمية تم بحثها خلال الاجتماعات المشتركة</div>
-                </div>
-            </div>
-
-            <!-- اقتباس بارز -->
-            <div class="highlight-quote scroll-reveal compact-section">
-                "كانت العلاقات الثنائية بين البلدين دائمًا واقعية الطابع، لكنها اليوم أصبحت أيضًا رؤية استراتيجية مستقبلية. فالمملكة لم تعد مجرد زبون أو حليف، بل أصبحت، على نحو متزايد، القائد السياسي والاقتصادي والروحي للعالمين العربي والإسلامي السائرين نحو التحديث والاستقرار."
-            </div>
-
-            <!-- القسم السادس: الخاتمة -->
-            <section class="content-section scroll-reveal compact-section">
-                <h2 class="section-title">الخاتمة</h2>
-                <p>زيارة الأمير محمد بن سلمان إلى واشنطن تمثل خطوة مهمة نحو تعزيز الشراكة الاستراتيجية بين السعودية والولايات المتحدة. من خلال التعاون المستمر في المجالات الدبلوماسية والاقتصادية والأمنية، يمكن للطرفين العمل معًا من أجل استقرار الشرق الأوسط وتحقيق مستقبل أكثر أمانًا وازدهارًا لجميع شعوب المنطقة.</p>
-                <p>وفي هذا الأسبوع، سيعرض ولي العهد والرئيس ترامب هذه الشراكة المتنامية — شراكة تُرسّخ علاقة متينة ودائمة بين البلدين.</p>
-            </section>
-
-            <div class="authors-display compact-section">
-                <div class="author-card scroll-reveal">
-                    <strong>محمد الحامد</strong>
-                    <div>محلل جيوسياسي سعودي ورئيس مجموعة النخبة (@M7Alhamed)</div>
-                </div>
-                <div class="author-card scroll-reveal">
-                    <strong>جيسون إبستين</strong>
-                    <div>رئيس شركة Southfive Strategies LLC للعلاقات الدولية (@Southfive)</div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="magical-footer scroll-reveal">
-            <p>© 2024 واشنطن تايمز - جميع الحقوق محفوظة</p>
-            <div class="social-diplomacy">
-                <a href="#" class="social-link">@M7Alhamed</a>
-                <a href="#" class="social-link">@Southfive</a>
-            </div>
-        </footer>
-    </div>
-
-    <!-- إضافة مكتبات PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-    <script>
-        const scrollReveals = document.querySelectorAll('.scroll-reveal');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        scrollReveals.forEach(element => {
-            observer.observe(element);
-        });
-
-        // دالة تحميل PDF محسنة مع هوامش أقل
-        async function downloadPDF() {
-            const loadingElement = document.getElementById('pdfLoading');
-            const downloadButton = document.querySelector('.pdf-download-btn');
-            
-            try {
-                // إظهار نافذة التحميل
-                loadingElement.style.display = 'flex';
-                downloadButton.disabled = true;
-                downloadButton.innerHTML = '📁 جاري التحميل...';
-
-                // الانتظار قليلاً لضمان عرض نافذة التحميل
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF('p', 'mm', 'a4');
-                
-                // هوامب أقل لاستغلال المساحة بشكل أفضل
-                const margin = 8; // تم تقليل الهوامب من 20 إلى 8
-                const pageWidth = 210 - (2 * margin);
-                const pageHeight = 297 - (2 * margin);
-                let yPosition = margin;
-                
-                // إضافة الهيدر
-                const header = document.querySelector('.diplomatic-header');
-                const headerCanvas = await html2canvas(header, {
-                    scale: 2,
-                    useCORS: true,
-                    backgroundColor: '#ffffff',
-                    width: header.offsetWidth,
-                    height: header.offsetHeight
-                });
-                
-                const headerImgData = headerCanvas.toDataURL('image/jpeg', 0.9);
-                const headerHeight = (headerCanvas.height * pageWidth) / headerCanvas.width;
-                
-                // التحقق من مساحة الصفحة للهيدر
-                if (headerHeight > pageHeight) {
-                    // إذا كان الهيدر طويل جداً، نقسمه
-                    pdf.addImage(headerImgData, 'JPEG', margin, yPosition, pageWidth, pageHeight);
-                    pdf.addPage();
-                    yPosition = margin;
-                } else {
-                    pdf.addImage(headerImgData, 'JPEG', margin, yPosition, pageWidth, headerHeight);
-                    yPosition += headerHeight + 8; // تقليل المسافة بين الأقسام
-                }
-                
-                // إضافة المحتوى الرئيسي قسمًا قسمًا
-                const contentSections = document.querySelectorAll('.magical-content > *');
-                
-                for (let i = 0; i < contentSections.length; i++) {
-                    const section = contentSections[i];
-                    
-                    // تخطي العناصر المخفية
-                    if (section.offsetParent === null) continue;
-                    
-                    const sectionCanvas = await html2canvas(section, {
-                        scale: 2,
-                        useCORS: true,
-                        backgroundColor: '#ffffff',
-                        width: section.offsetWidth,
-                        height: section.offsetHeight
-                    });
-                    
-                    const sectionImgData = sectionCanvas.toDataURL('image/jpeg', 0.9);
-                    const sectionHeight = (sectionCanvas.height * pageWidth) / sectionCanvas.width;
-                    
-                    // التحقق إذا كان هناك مساحة كافية في الصفحة الحالية
-                    if (yPosition + sectionHeight > pageHeight + margin) {
-                        pdf.addPage();
-                        yPosition = margin;
-                    }
-                    
-                    pdf.addImage(sectionImgData, 'JPEG', margin, yPosition, pageWidth, sectionHeight);
-                    yPosition += sectionHeight + 6; // تقليل المسافة بين الأقسام
-                    
-                    // إضافة صفحة جديدة إذا كان المحتوى طويلاً
-                    if (yPosition > pageHeight - 20 && i < contentSections.length - 1) {
-                        pdf.addPage();
-                        yPosition = margin;
-                    }
-                }
-                
-                // إضافة الفوتر في صفحة جديدة
-                pdf.addPage();
-                const footer = document.querySelector('.magical-footer');
-                const footerCanvas = await html2canvas(footer, {
-                    scale: 2,
-                    useCORS: true,
-                    backgroundColor: '#ffffff',
-                    width: footer.offsetWidth,
-                    height: footer.offsetHeight
-                });
-                
-                const footerImgData = footerCanvas.toDataURL('image/jpeg', 0.9);
-                const footerHeight = (footerCanvas.height * pageWidth) / footerCanvas.width;
-                const footerY = Math.max(margin, (297 - footerHeight) / 2); // توسيط مع مراعاة الهوامب
-                
-                pdf.addImage(footerImgData, 'JPEG', margin, footerY, pageWidth, footerHeight);
-
-                // حفظ الملف
-                pdf.save('السعودية-والولايات-المتحدة-استقرار-الشرق-الأوسط.pdf');
-
-            } catch (error) {
-                console.error('Error generating PDF:', error);
-                alert('حدث خطأ أثناء إنشاء PDF. يرجى المحاولة مرة أخرى.');
-            } finally {
-                // إخفاء نافذة التحميل
-                loadingElement.style.display = 'none';
-                downloadButton.disabled = false;
-                downloadButton.innerHTML = '📄 حفظ كـ PDF';
-            }
-        }
-
-        
-
-        // إضافة تأثيرات إضافية للزر
-        const pdfButton = document.querySelector('.pdf-download-btn');
-        pdfButton.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.05)';
-        });
-
-        pdfButton.addEventListener('mouseleave', function() {
-            if (!this.disabled) {
-                this.style.transform = 'translateY(0) scale(1)';
-            }
-        });
-    </script>
-</body>
-</html>
